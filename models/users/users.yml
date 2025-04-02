@@ -12,6 +12,9 @@ models:
         data_type: int
         constraints:
           - type: primary_key
+        data_tests:
+          - unique:
+              name: uers__user_id__unique
 
       - name: name
         data_type: string

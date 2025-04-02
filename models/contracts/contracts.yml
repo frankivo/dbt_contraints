@@ -12,6 +12,9 @@ models:
         data_type: int
         constraints:
           - type: primary_key
+        data_tests:
+          - unique:
+              name: contracts__contract_id__unique
 
       - name: user_id
         data_type: int
@@ -19,6 +22,11 @@ models:
           - type: foreign_key
             to: ref("users")
             to_columns: [user_id]
+        data_tests:
+          - relationships:
+              name: contracts__relationship__users
+              to: ref("users")
+              field: user_id
 
       - name: start_date
         data_type: date
