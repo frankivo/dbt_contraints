@@ -8,8 +8,10 @@ models:
         enforced: true
 
     columns:
-      - name: id
+      - name: user_id
         data_type: int
+        constraints:
+          - type: primary_key
 
       - name: name
         data_type: string

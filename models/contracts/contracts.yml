@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: contracts
+
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: contract_id
+        data_type: int
+        constraints:
+          - type: primary_key
+
+      - name: user_id
+        data_type: int
+        constraints:
+          - type: foreign_key
+            to: ref("users")
+            to_columns: [user_id]
+
+      - name: start_date
+        data_type: date
+
+      - name: end_date
+        data_type: date
+
+      - name: function
+        data_type: string
